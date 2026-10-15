@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns:c2pa="http://c2pa.org/manifest"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 340 100"
+	 style="enable-background:new 0 0 340 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#F3EDE0;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#D0A24A;stroke-width:3;stroke-linecap:round;}
+	.st2{fill:#D0A24A;}
+	.st3{fill:#F3EDE0;}
+	.st4{font-family:'HelveticaNeue-Medium';}
+	.st5{font-size:34px;}
+	.st6{font-size:13px;}
+	.st7{letter-spacing:3;}
+</style>
+<title>Omnia Sports — versión para fondo oscuro</title>
+<g>
+	<path class="st0" d="M20,71V41c0-15,11.1-27.7,26-29.7"/>
+	<path class="st0" d="M54,11.3C68.9,13.3,80,26,80,41v30"/>
+	<path class="st0" d="M30,71V41c0-9.5,6.7-17.7,16-19.6"/>
+	<path class="st0" d="M54,21.4c9.3,1.9,16,10.1,16,19.6v30"/>
+	<path class="st0" d="M40,71V41c0-4,2.3-7.6,6-9.2"/>
+	<path class="st0" d="M54,31.8c3.7,1.6,6,5.2,6,9.2v30"/>
+</g>
+<path class="st1" d="M50,85V11"/>
+<circle class="st2" cx="50" cy="55" r="5"/>
+<text transform="matrix(1 0 0 1 94.0004 52)" class="st3 st4 st5">Omnia</text>
+<text transform="matrix(1 0 0 1 96.999 65.9996)" class="st2 st4 st6 st7">sports</text>
+</svg>

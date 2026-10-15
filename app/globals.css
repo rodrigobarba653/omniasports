@@ -1,26 +1,206 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #071a33;
+  --navy-2: #0c2744;
+  --navy-3: #143356;
+  --cyan: #11bfcf;
+  --gold: #d0a24a;
+  --gold-deep: #b8863b;
+  --cream: #f3ede0;
+  --ink: #071a33;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-3: var(--navy-3);
+  --color-cyan: var(--cyan);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-oswald);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.75rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-outfit), sans-serif;
+}
+
+::selection {
+  background: var(--cyan);
+  color: var(--navy);
+}
+
+.font-display {
+  font-family: var(--font-oswald), sans-serif;
+}
+
+.line-grid {
+  background-image:
+    linear-gradient(rgba(243, 237, 224, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 237, 224, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  transform: perspective(55vh) rotateX(62deg) scale(1.35);
+  transform-origin: center top;
+}
+
+.ring-deco {
+  border: 1.5px solid color-mix(in srgb, var(--cyan) 70%, transparent);
+  border-radius: 9999px;
+}
+
+.ring-deco::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1.5px solid color-mix(in srgb, var(--gold) 80%, transparent);
+  border-radius: 9999px;
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-bg {
+  animation: kenburns 18s ease-out both;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-copy > * {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-copy > *:nth-child(1) {
+  animation-delay: 0.02s;
+}
+.hero-copy > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.hero-copy > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.hero-copy > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.hero-player {
+  animation: player-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-player:nth-child(1) {
+  animation-delay: 0.16s;
+}
+.hero-player:nth-child(2) {
+  animation-delay: 0.26s;
+}
+.hero-player:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes player-up {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--cyan);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.talent-row {
+  scrollbar-width: none;
+}
+
+.talent-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .hero-bg,
+  .hero-copy > *,
+  .hero-player {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

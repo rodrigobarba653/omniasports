@@ -7,7 +7,7 @@ export const nav = [
   { href: "/#contacto", label: "Contacto" },
 ] as const;
 
-export const footerNav = nav.filter((item) => item.href !== "#inicio");
+export const footerNav = nav.filter((item) => item.href !== "/#inicio");
 
 export const contact = {
   name: "André Villamizar",
